@@ -11,4 +11,8 @@ server:
     - type: http
       port: 8081
 
+jerseyClient:
+  timeout: 1s
+  connectionTimeout: 1s
+
 blockchainHostname: https://blockchain.info

@@ -12,17 +12,21 @@ public class BitcoinAddressServiceConfiguration extends Configuration {
 
     @Valid
     @NotNull
-    private JerseyClientConfiguration jerseyClient = new JerseyClientConfiguration();
+    @JsonProperty("jerseyClient")
+    private JerseyClientConfiguration jerseyClientConfiguration = new JerseyClientConfiguration();
 
     @NotEmpty
+    @JsonProperty
     private String blockchainHostname;
 
-    @JsonProperty("jerseyClient")
     public JerseyClientConfiguration getJerseyClientConfiguration() {
-        return jerseyClient;
+        return jerseyClientConfiguration;
     }
 
-    @JsonProperty
+    public void setJerseyClientConfiguration(JerseyClientConfiguration jerseyClientConfiguration) {
+        this.jerseyClientConfiguration = jerseyClientConfiguration;
+    }
+
     public String getBlockchainHostname() {
         return blockchainHostname;
     }
