@@ -1,0 +1,14 @@
+logging:
+  level: INFO
+  loggers:
+    com.bitcoin: DEBUG
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+blockchainHostname: https://blockchain.info
